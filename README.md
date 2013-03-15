@@ -1,7 +1,12 @@
-lib
+# lib 
 ===
 
 lib | a command line framework
+
+===
+
+### ALPHA VERSION
+===
 
 ## Nutshell
 
