@@ -1,17 +1,19 @@
 # lib 
 ===
 
-lib | a command line framework
+A command line framework in bash
 
 ===
-
 ### ALPHA VERSION
 ===
 
-## Nutshell
+## About
 
-lib is a collection of utilities and helpers functions for bash
-and meant to be easily imported into a script
+I have developed `lib` because when I have to do a bash script, I often end up writing the same functions over and over again. I wanted to store them somewhere and to be able to easily import them in the scope of my script.
+
+## Usage
+
+`lib <function-name> [<function-arguments>...]`
 
 ## Terminal user story
 
