@@ -19,12 +19,12 @@ dude@machine ~ $ `lib text.bold This text will be output in bold\!`
 
 ## Script integration user story
 
-`#!/bin/bash`
+    #!/bin/bash
 
-`## Import lib into your script's scope`
+    ## Import lib into your script's scope
 
-`. $(lib --import)`
+    . $(lib --import)
 
-`## Now you call any lib function you want, it will be called within the process`
+    ## Now you call any lib function you want, it will be called within the process
 
-`lib test This is a test`
+    lib test This is a test
