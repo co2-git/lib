@@ -8,7 +8,7 @@ lib.Array.after(){
 
 	if [ -z "$array" ]
 		then read array
-		Array.after $array
+		lib.Array.after $array
 		return
 	fi
 
