@@ -1,7 +1,7 @@
 #!/bin/bash
 
 [ -z "$libPATH" ] && {
-    echo "libPATH not found, please run "$(dirname $0)"/make.sh"
+    echo "libPATH not found, please run "$(dirname $(readlink $0))"/make.sh"
     exit
 }
 
