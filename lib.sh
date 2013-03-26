@@ -8,6 +8,14 @@
 if [ $# -eq 0 ]
 	then
 	cat $libPATH/README.md
+	echo
+	echo -n "Status for you ($(whoami))"
+	if [ -n "$libPATH" ]
+		then
+		echo ' You can use lib :)'
+	else
+		echo ' You cannot use lib :( Please set $libPATH in your .bashrc'
+	fi
 fi
 
 case "$1" in
