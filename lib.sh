@@ -14,7 +14,7 @@ fi
 
 case "$1" in
     (--help)
-        cat $libPATH/README.md
+        curl https://github.com/co2-git/lib/blob/master/README.md
     ;;
 	(--import|import)
 		echo $libPATH/import.sh
