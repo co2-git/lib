@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -z "$libPATH" ] && {
+[ -z "$libPATH" ] && [ ! "$1" = --help ] {
     echo "libPATH not found! Try <lib --help> for help"
     exit
 }
