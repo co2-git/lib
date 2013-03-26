@@ -48,3 +48,4 @@ fi
 
 ln -s $pointer /usr/bin/lib || exit $E_COULD_NOT_CREATE_SHORTCUT
 echo "libPATH=$__into export libPATH;" >> ~/.bashrc || exit $E_COULD_NOT_ADD_TO_BASHRC
+source ~/.bashrc
