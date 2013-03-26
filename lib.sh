@@ -1,7 +1,7 @@
 #!/bin/bash
 
 [ -z "$libPATH" ] && {
-    echo "libPATH not found, please run "$(dirname $(readlink $0))"/make.sh"
+    echo "libPATH not found! Try <lib --help> for help"
     exit
 }
 
@@ -13,6 +13,9 @@ if [ $# -eq 0 ]
 fi
 
 case "$1" in
+    (--help)
+        cat $libPATH/README.md
+    ;;
 	(--import|import)
 		echo $libPATH/import.sh
 	;;
