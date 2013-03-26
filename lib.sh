@@ -5,8 +5,6 @@
     exit
 }
 
-source $libPATH/import.sh
-
 if [ $# -eq 0 ]
 	then
 	cat $libPATH/README.md
@@ -20,6 +18,7 @@ case "$1" in
 		echo $libPATH/import.sh
 	;;
 	(*)
+        source $libPATH/import.sh
 		lib "$@"
 	;;
 esac
