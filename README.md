@@ -37,3 +37,7 @@ You can run the script `make.sh` to globally install `lib` in your workstation. 
 
     $ echo "libPATH=/opt/lib export libPATH;" >> ~/.bashrc
     $ source ~/.bashrc
+    
+## Dependencies
+
+    aptitude install curl
