@@ -1,6 +1,11 @@
 #!/bin/bash
 
-[ -z "$libPATH" ] && [ ! "$1" = --help ] && {
+[ -z "$libPATH" ] && {
+	[ -L "$0" ] && libPATH=$(dirname $(readlink "$0")) || libPATH=$(dirname "$0")
+}
+
+[ ! -d "$libPATH" ] && [ ! "$1" = --help ] && {
+
     echo "libPATH not found! Try <lib --help> for help"
     exit
 }
