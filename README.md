@@ -17,7 +17,7 @@ I have developed `lib` because when I have to do a bash script, I often end up w
 
 ## Terminal user story
 
-dude@machine ~ $ `lib text.bold This text will be output in bold\!`
+dude@machine ~ $ `lib Text.bold This text will be output in bold\!`
 
 ## Script integration user story
 
@@ -25,15 +25,10 @@ dude@machine ~ $ `lib text.bold This text will be output in bold\!`
 
     ## Import lib into your script's scope
 
-    . $(lib --import)
+    lib --import
 
     ## Now you call any lib function you want, it will be called within the process
 
     lib test This is a test
-
-## Portability
-
-You can run the script `make.sh` to globally install `lib` in your workstation. Yet, each non sudo-user should ask their workstation admin to give them path to `lib` and then declare it as `$libPATH` in his `~/.bashrc` file. For example:
-
-    $ echo "libPATH=/opt/lib export libPATH;" >> ~/.bashrc
-    $ source ~/.bashrc
+    lib Text.color green This text will appear in green
+    lib Array.join , 1 2 3 4
