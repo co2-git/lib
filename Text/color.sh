@@ -1,4 +1,4 @@
-lib.Text.Color(){
+lib.Text.color(){
 	color=$(lib tput.get-color-number "$1")
 	
 	[ $# -eq 1 ] && read msg || {

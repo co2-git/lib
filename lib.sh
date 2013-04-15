@@ -33,7 +33,7 @@ case "$1" in
 		
 	;;
 	(*)
-        source $libPATH/import.sh
+        . $libPATH/import.sh
 		lib "$@"
 	;;
 esac
