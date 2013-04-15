@@ -25,11 +25,13 @@ dude@machine ~ $ `lib text.bold This text will be output in bold\!`
 
     ## Import lib into your script's scope
 
-    . $(lib --import)
+    lib --import
 
     ## Now you call any lib function you want, it will be called within the process
 
     lib test This is a test
+    lib Text.color green This text will appear in green
+    lib Array.join , 1 2 3 4
     
 ## Dependencies
 
