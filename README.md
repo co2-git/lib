@@ -30,10 +30,7 @@ dude@machine ~ $ `lib text.bold This text will be output in bold\!`
     ## Now you call any lib function you want, it will be called within the process
 
     lib test This is a test
+    
+## Dependencies
 
-## Portability
-
-You can run the script `make.sh` to globally install `lib` in your workstation. Yet, each non sudo-user should ask their workstation admin to give them path to `lib` and then declare it as `$libPATH` in his `~/.bashrc` file. For example:
-
-    $ echo "libPATH=/opt/lib export libPATH;" >> ~/.bashrc
-    $ source ~/.bashrc
+    aptitude install curl
