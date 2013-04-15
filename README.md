@@ -17,7 +17,7 @@ I have developed `lib` because when I have to do a bash script, I often end up w
 
 ## Terminal user story
 
-dude@machine ~ $ `lib text.bold This text will be output in bold\!`
+dude@machine ~ $ `lib Text.bold This text will be output in bold\!`
 
 ## Script integration user story
 
@@ -32,7 +32,3 @@ dude@machine ~ $ `lib text.bold This text will be output in bold\!`
     lib test This is a test
     lib Text.color green This text will appear in green
     lib Array.join , 1 2 3 4
-    
-## Dependencies
-
-    aptitude install curl
