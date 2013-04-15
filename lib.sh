@@ -11,7 +11,7 @@
 
 if [ $# -eq 0 ]
 	then
-	cat $libPATH/README.md
+	less $libPATH/README.md
 	echo
 	echo -n "Status for you ($(whoami))"
 	if [ -n "$libPATH" ]
@@ -24,7 +24,7 @@ fi
 
 case "$1" in
     (--help)
-        curl https://raw.github.com/co2-git/lib/master/README.md
+    	less $libPATH/README.md
     ;;
 	(--import|import)
 		. $libPATH/import.sh
