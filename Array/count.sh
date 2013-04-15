@@ -1,0 +1,3 @@
+lib.Array.count(){
+	echo $#
+}
