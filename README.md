@@ -42,6 +42,6 @@ dude@machine ~ $ `lib Text.bold This text will be output in bold\!`
     sudo ln -s lib/lib.sh /usr/bin/lib
     
 ### Local install
-    git https://github.com/co2-git/lib.git
+    git clone https://github.com/co2-git/lib.git
     echo "alias lib='/path/to/lib/lib.sh'" >> ~/.bashrc
     source ~/.bashrc
