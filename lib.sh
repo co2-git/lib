@@ -23,17 +23,10 @@ if [ $# -eq 0 ]
 fi
 
 case "$1" in
-    (--help)
-    	less $libPATH/README.md
-    ;;
-	(--import|import)
-		. $libPATH/import.sh
-	;;
-	(--all)
-		
-	;;
-	(*)
-        . $libPATH/import.sh
-		lib "$@"
-	;;
+    --help|-h)				less $libPATH/README.md ;;
+	--path|-p)				echo $libPATH ;;
+	--import|-i)			. $libPATH/import.sh ;;
+	--all|-a)				;;
+	*)						. $libPATH/import.sh
+							lib "$@" ;;
 esac
