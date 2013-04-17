@@ -1,19 +1,20 @@
 # lib 
 ===
 
-A command line framework in bash
-
-===
-### ALPHA VERSION
-===
+A command line framework in bash offering a set of utilities/helpers to ease coding in bash.
 
 ## About
 
-I have developed `lib` because when I have to do a bash script, I often end up writing the same functions over and over again. I wanted to store them somewhere and to be able to easily import them in the scope of my script.
+lib offers a set of functions in bash that are helpers that can be called from the terminal or be included in the scope of a bash script. For better usability, functions are ordered by namespsaces.
 
 ## Usage
 
-`lib <function-name> [<function-arguments>...]`
+    lib <function-name> [<function-arguments>...]
+    lib --all # view all functions
+    lib --all --namespace  # view all namespaces
+    lib --all --namespace Regex # view all functions under the namespace Regex
+    lib --all Array.join # view documentation for specific function (here Array.join)
+
 
 ## Terminal user story
 
