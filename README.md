@@ -33,3 +33,15 @@ dude@machine ~ $ `lib Text.bold This text will be output in bold\!`
     lib test This is a test
     lib Text.color green This text will appear in green
     lib Array.join , 1 2 3 4
+
+## Installation
+
+### As sudo (global install)
+
+    git clone https://github.com/co2-git/lib.git
+    sudo ln -s lib/lib.sh /usr/bin/lib
+    
+### Local install
+    git https://github.com/co2-git/lib.git
+    echo "alias lib='/path/to/lib/lib.sh'" >> ~/.bashrc
+    source ~/.bashrc
