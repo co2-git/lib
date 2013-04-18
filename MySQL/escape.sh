@@ -1,3 +1,10 @@
+<< lib.README
+#name 		MySQL.escape
+#nutshell	Escape a value for MySQL
+#usage		lib MySQL.escape <value>
+#story		lib MySQL.escape 1'1 # echo 1\\\'1
+lib.README
+
 lib.MySQL.escape(){
 	quote='"'
 	

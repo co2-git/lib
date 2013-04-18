@@ -1,3 +1,10 @@
+<< lib.README
+#name 		Array.after
+#nutshell	Give the item after any occurences of needle
+#usage		lib Array.after <needle> <stack...>
+#story		lib Array.after 3 1 2 3 4 # echo 4
+lib.README
+
 lib.Array.after(){
 	after="$1" 
 	shift

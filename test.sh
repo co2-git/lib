@@ -1,3 +1,10 @@
+<< lib.README
+#name 		test
+#nutshell	A test function to see if lib is working
+#usage		lib test [arguments...]
+#story		lib test A test message to display
+lib.README
+
 lib.test2(){
 	echo Hello World\!
 	echo Arguments\: $#

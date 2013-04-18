@@ -1,3 +1,11 @@
+<< lib.README
+#name 		Array.in
+#nutshell	Tell if needle is in stack
+#usage		lib Array.in <needle> <stack...>
+#story		lib Array.in 3 1 2 3 4 # return 0 (true)
+#story		lib Array.in 7 1 2 3 4 # return 1 (false)
+lib.README
+
 lib.Array.in(){
 	needle=$1
 	useRegex=0

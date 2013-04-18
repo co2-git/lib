@@ -26,7 +26,9 @@ case "$1" in
     --help|-h)				less $libPATH/README.md ;;
 	--path|-p)				echo $libPATH ;;
 	--import|-i)			. $libPATH/import.sh ;;
-	--all|-a)				;;
+	--all|-a)				. $libPATH/all.sh
+							shift
+							lib.all "$@";;
 	*)						. $libPATH/import.sh
 							lib "$@" ;;
 esac

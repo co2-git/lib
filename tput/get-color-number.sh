@@ -1,3 +1,10 @@
+<< lib.README
+#name 		tput.get-color-number
+#nutshell	Translate a color name into the matching tput number
+#usage		lib tput.get-color-number <color>
+#story		lib tput.get-color-number red # echo 4
+lib.README
+
 lib.tput.get-color-number(){
 	color="$1"
 	
