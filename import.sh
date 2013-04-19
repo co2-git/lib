@@ -1,9 +1,8 @@
 lib(){
-	function="$1"
+	local function="$1"
 	shift
-
-	file=$libPATH/${function/./\///}.sh
-	method="lib.$function"
+	local file=$libPATH/${function/./\///}.sh
+	local method="lib.$function"
 
 	#
 	#	If method already exists no need to require file
