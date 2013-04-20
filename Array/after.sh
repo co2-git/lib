@@ -3,35 +3,49 @@
 #nutshell	Give the item after any occurences of needle
 #usage		lib Array.after <needle> <stack...>
 #story		lib Array.after 3 1 2 3 4 # echo 4
+#story		lib Array.after /do/ dog cat # echo cat
 lib.README
 
 lib.Array.after(){
-	after="$1" 
+	needle="$1"
 	shift
 
+	useRegex=0
+	if [[ "$needle" == /*/ ]]
+		then
+		useRegex=1
+		needle=$(echo "$needle" | sed -e 's/^\/\(.\+\)\/$/\1/')
+	fi
+
 	declare -a array
-
 	array=( "$@" )
-
 	if [ -z "$array" ]
 		then read array
 		lib.Array.after $array
 		return
 	fi
 
-	found=1
-
-	for item in "${array[@]}"
+	found=$((0))
+	for (( i=0; i<${#array[@]}; i++ ))
 	do
-		[ $found -eq 0 ] && {
-			echo "$item"
-			return $found
-		}
-
-		[ "$item" = "$after" ] && {
-			found=0
-		}
+		local next=$(( i + 1 ))
+		local item="${array[$i]}"
+		if [ $useRegex -gt 0 ]; then
+			if lib >/dev/null Regex.match "$needle" "$item"; then
+				(( found ++ ))
+				echo "${array[$next]}"
+			fi
+		else
+			if [ "$item" = "$needle" ]; then
+				(( found ++ ))
+				echo "${array[$next]}"
+			fi
+		fi
 	done
 
-	return $found
+	if [ $found -eq 0 ]; then
+		return 1
+	else
+		return 0
+	fi
 }

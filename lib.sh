@@ -26,6 +26,7 @@ case "$1" in
     --help|-h)				less $libPATH/README.md ;;
 	--path|-p)				echo $libPATH ;;
 	--import|-i)			. $libPATH/import.sh ;;
+	--mute|-m)				echo $0 "$($0 Text.replace mute 'h' "$@" )" ;;
 	--all|-a)				. $libPATH/all.sh
 							shift
 							lib.all "$@";;

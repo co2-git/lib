@@ -4,6 +4,7 @@
 #usage		lib Array.in <needle> <stack...>
 #story		lib Array.in 3 1 2 3 4 # return 0 (true)
 #story		lib Array.in 7 1 2 3 4 # return 1 (false)
+#story		lin Array.in /do/ cat dog fox # true, echo dog
 lib.README
 
 lib.Array.in(){
