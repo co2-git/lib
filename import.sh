@@ -15,6 +15,6 @@ lib(){
 			$method "$@";
 		fi
 	else
-		echo lib\: Function not found\: $function in $file
+		echo lib\: Function not found\: $function
 	fi
 }
