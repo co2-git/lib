@@ -18,7 +18,7 @@ lib offers a set of functions in bash that are helpers that can be called from t
 
 ## Terminal user story
 
-dude@machine ~ $ `lib Text.bold This text will be output in bold\!`
+dude@machine ~ $ `lib Text bold This text will be output in bold\!`
 
 ## Script integration user story
 
@@ -31,8 +31,8 @@ dude@machine ~ $ `lib Text.bold This text will be output in bold\!`
     ## Now you call any lib function you want, it will be called within the process
 
     lib test This is a test
-    lib Text.color green This text will appear in green
-    lib Array.join , 1 2 3 4
+    lib Text color green This text will appear in green
+    lib Array join , 1 2 3 4
 
 ## Installation
 
