@@ -5,12 +5,15 @@
 lib.README
 
 lib.import.namespace(){
-	namespace="$1"
-	path="$2"
+	local namespace="$1"; shift;
+	local path="$1"; shift;
+	local default="$(lib Array after --default "$@")"
 
-	echo 	$namespace'PATH="'$path'";' > /tmp/lib.ns.$namespace
-
-	sed 's/lib/'$namespace'/' $libPATH/import.sh >> /tmp/lib.ns.$namespace
+	echo 'readonly '$namespace'_path="'$path'";' > /tmp/lib.ns.$namespace
+	if [ -n "$default" ]; then
+		echo 'readonly '$namespace'_default="'$default'";' >> /tmp/lib.ns.$namespace;
+	fi
+	sed 's/lib/'$namespace'/g' $lib_path/import.sh >> /tmp/lib.ns.$namespace
 
 	echo /tmp/lib.ns.$namespace
 }

@@ -1,35 +1,15 @@
 #!/bin/bash
 
-[ -z "$libPATH" ] && {
-	[ -L "$0" ] && libPATH=$(dirname $(readlink "$0")) || libPATH=$(dirname "$0")
+[ -z "$lib_path" ] && {
+	[ -L "$0" ] && lib_path=$(dirname $(readlink "$0")) || 
+	lib_path=$(dirname "$0")
 }
 
-[ ! -d "$libPATH" ] && [ ! "$1" = --help ] && {
-    echo "libPATH not found! Try <lib --help> for help"
+[ ! -d "$lib_path" ] && [ ! "$1" = --help ] && {
+    echo "lib_path not found! Try <lib --help> for help"
     exit
 }
 
-if [ $# -eq 0 ]
-	then
-	less $libPATH/README.md
-	echo
-	echo -n "Status for you ($(whoami))"
-	if [ -n "$libPATH" ]
-		then
-		echo ' You can use lib :)'
-	else
-		echo ' You cannot use lib :( Please set $libPATH in your .bashrc'
-	fi
-fi
-
-case "$1" in
-    --help|-h)				less $libPATH/README.md ;;
-	--path|-p)				echo $libPATH ;;
-	--import|-i)			. $libPATH/import.sh ;;
-	--mute|-m)				echo $0 "$($0 Text.replace mute 'h' "$@" )" ;;
-	--all|-a)				. $libPATH/all.sh
-							shift
-							lib.all "$@";;
-	*)						. $libPATH/import.sh
-							lib "$@" ;;
-esac
+lib_default=hello;
+. $lib_path/import.sh;
+lib "$@";
