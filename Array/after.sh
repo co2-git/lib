@@ -20,7 +20,7 @@ lib.Array.after(){
 	declare -a array
 	array=( "$@" )
 	if [ -z "$array" ]
-		then read array
+		then read -t 0 array
 		lib.Array.after $array
 		return
 	fi
