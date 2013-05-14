@@ -7,9 +7,8 @@ lib.README
 lib.import.namespace(){
 	local namespace="$1"; shift;
 	local path="$1"; shift;
-	echo here;
 	local default="$(lib Array after --default "$@")"
-	echo if;
+	
 	echo 'readonly '$namespace'_path="'$path'";' > /tmp/lib.ns.$namespace
 	if [ -n "$default" ]; then
 		echo 'readonly '$namespace'_default="'$default'";' >> /tmp/lib.ns.$namespace;
