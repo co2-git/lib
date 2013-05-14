@@ -19,9 +19,11 @@ lib.Array.after(){
 
 	declare -a array
 	array=( "$@" )
-	if [ -z "$array" ]
-		then read -t 0 array
-		lib.Array.after $array
+	if [ -z "$array" ]; then 
+		read -t 0 array;
+		if [ -n "$array" ]; then 
+			lib.Array.after $array;
+		fi
 		return
 	fi
 
