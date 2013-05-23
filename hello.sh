@@ -16,10 +16,8 @@ lib.hello() {
 	lib Text color blue '  What are the most useful commands?' | lib Text bold;
 	echo -n "$(lib Text color orange '	Display help>')";
 	lib Text bold ' lib help';
-	lib Text color orange '	Display help for a specific function>';
-	lib Text bold '		lib help --function foo';
 	echo -n "$(lib Text color orange '	List lib functions>')"
-	lib Text bold ' lib functions';
+	lib Text bold ' lib ls';
 
 	lib Text color blue '  Where can I know more about lib?' | lib Text bold;
 	lib Text color orange '	Visit us on github at https://github.com/co2-git/lib';
