@@ -2,7 +2,39 @@ lib.ports() {
 	case "$1" in
 		#	Return a free port number
 		free )
-			lib Network.find-unused-port
+			lib ports.free
+			;;
+		--help | -h | help )
+			cat << HELP
+			
+  View ports in use:
+  $(lib Text color green lib ports)
+
+  Filter ports in use by keyword:
+  $(lib Text color green lib ports '--<keyword> <value>')
+	  Examples:
+	  $(lib Text color orange 'lib ports --port 80')
+	  $(lib Text color orange 'lib ports --pid 1000')
+	  $(lib Text color orange 'lib ports --command mongod')
+	  $(lib Text color orange 'lib ports --protocol tcp')
+	  $(lib Text color orange 'lib ports --ipv 6')
+
+  Filter ports in use by column:
+  $(lib Text color green 'lib ports --columns <column,...>')
+	  Examples:
+	  $(lib Text color orange 'lib ports --columns port')
+	  $(lib Text color orange 'lib ports --columns port,pid')
+
+	  Column can be one of the following:
+		  command
+		  pid
+		  port
+		  protocol
+
+  Find a free port:
+  $(lib Text color green 'lib ports free')
+
+HELP
 			;;
 		* )
 			#	Get list of free ports
@@ -131,7 +163,6 @@ BASH
 										fi
 										;;
 								esac
-								#print="$print$column	";
 							done
 							echo "$print";
 						fi
