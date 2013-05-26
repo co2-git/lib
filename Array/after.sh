@@ -17,7 +17,6 @@ lib.Array.after(){
 		needle=$(echo "$needle" | sed -e 's/^\/\(.\+\)\/$/\1/')
 	fi
 
-	declare -a array
 	array=( "$@" )
 	if [ -z "$array" ]; then 
 		read -t 0 array;

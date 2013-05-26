@@ -1,5 +1,5 @@
 # http://unstableme.blogspot.com.es/2007/02/finding-unused-port.html
-lib.Network.find-unused-port() {
+lib.ports.free() {
 	Port=3000
 	while netstat -atwn | grep >/dev/null "^.*:${Port}.*:\*\s*LISTEN\s*$" 
 	do

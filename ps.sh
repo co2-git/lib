@@ -1,0 +1,3 @@
+lib.ps(){
+	lib Process "$@"
+}

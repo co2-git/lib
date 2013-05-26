@@ -1,7 +1,7 @@
 lib.Process(){
-	[ $# -eq 0 ] && {
-		ls $libPATH/Process
-		return 0
-	}
-	lib Process."$@"
+	if [ $# -eq 0 ]; then
+		lib Process.list;
+	else
+		lib Process.$@;
+	fi
 }

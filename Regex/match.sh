@@ -1,11 +1,12 @@
 lib.Regex.match(){
-	pattern="$1"
-	context="$2"
-	match=$(php -r 'echo (string) preg_match("/'$pattern'/", "'$context'");')
-	echo $match
-	if [ $match -eq 0 ]; then
-		return 1
+	local pattern="$1"; shift;
+	if [ $# -eq 0 ]; then
+		read -t 1 context;
+		if [ -z "$context" ]; then
+			return 2;
+		fi
 	else
-		return 0
+		local context="$@";
 	fi
+	echo "$context" | egrep -c "$pattern";
 }

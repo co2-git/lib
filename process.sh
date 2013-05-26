@@ -1,0 +1,3 @@
+lib.process(){
+	lib Process "$@"
+}
